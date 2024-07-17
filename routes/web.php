@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+   return response(["info"=>"gtp automatizacion"]);
 });
 
 
@@ -22,6 +22,6 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
-Route::get('/',"WaController@webhook");
-Route::post('/',"WaController@recibe");
+Route::get('/webhook',"WaController@webhook");
+Route::post('/webhook',"WaController@recibe");
 
